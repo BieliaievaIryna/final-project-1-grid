@@ -1,1 +1,46 @@
 @use "../../abstracts" as *;
+
+.footer {
+  background-color: $color-primary;
+
+  @extend %section;
+
+  &__container {
+
+    @extend %container;
+  }
+
+  &__content {
+    height: 40px;
+    width: 148px;
+    margin-inline: auto;
+    margin-top: $gap-sm;
+
+    &::before {
+      content: "";
+      border-top: 2px solid $color-white;
+      width: 75px;
+      color: white;
+      display: flex;
+      margin-inline: auto;
+    }
+  }
+
+  &__subtitle {
+    padding: 0;
+    margin-top: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.285em;
+    line-height: 1.125;
+    font-weight: 200;
+    font-size: 1rem;
+    color: $color-gray;
+
+    &-accent {
+      font-weight: 500;
+      color: $color-white;
+      letter-spacing: 0.05em;
+    }
+  }
+}

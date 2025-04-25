@@ -1,4 +1,4 @@
-$('.header__navbar-btn').on('click', function () {
+$('.header__navbar-btn').click(function () {
   $(this).toggleClass('active')
-  $('.header__navbar-list').stop(true, true).slideToggle(300)
+    $('.header__navbar-list').stop(true, true).slideToggle(300)
 })
