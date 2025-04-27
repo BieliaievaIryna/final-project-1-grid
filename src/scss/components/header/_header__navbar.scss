@@ -3,22 +3,22 @@
 
 .header__navbar {
   &-list {
-
     @include md-min {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
-      gap: $gap;
       justify-content: end;
 
+      gap: $gap;
+      grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
       @include unlist(0 (-$gap-sm) 0 0);
     }
-
     @include md {
-      display: none;
       position: absolute;
       top: 100%;
       right: $gap;
+
+      display: none;
       overflow: hidden;
+
       text-align: right;
 
       @include box-shadow;
@@ -30,12 +30,13 @@
       z-index: -1;
       top: -$gap;
       right: 0;
-      // right: -$gap;
       bottom: -$gap;
       left: -$gap;
 
       content: "";
+
       background-color: rgba($color-gray-dark, 0.25);
+
       backdrop-filter: blur(5px);
     }
   }
@@ -48,13 +49,14 @@
 
   &-link {
     display: block;
-    font-size: 1.125rem;
+
     letter-spacing: 0.09em;
+
+    font-size: 1.125rem;
 
     @include md-min {
       padding: $gap $gap-sm;
     }
-
     @include md {
       padding: $gap-sm $gap;
     }
@@ -62,12 +64,14 @@
 
   &-btn {
     position: relative;
+
     width: 30px;
-    height: 22.5px;    
+    height: 22.5px;
     margin-left: auto;
-    transform: rotate(0deg);
-    transition: .5s ease-in-out;
+
     cursor: pointer;
+    transition: 0.5s ease-in-out;
+    transform: rotate(0deg);
 
     @include md-min {
       display: none;
@@ -75,27 +79,33 @@
 
     &-row {
       position: absolute;
-      display: block;      
-      height: 3px;
+
+      display: block;
+
       width: 50%;
-      background: $color-white;
-      opacity: 1;
+      height: 3px;
+
+      transition: 0.25s ease-in-out;
       transform: rotate(0deg);
-      transition: .25s ease-in-out;
+
+      opacity: 1;
+      background: $color-white;
 
       &:nth-child(even) {
         left: 50%;
+
         border-radius: 0 3px 3px 0;
       }
 
       &:nth-child(odd) {
-        left: 0px;
+        left: 0;
+
         border-radius: 3px 0 0 3px;
       }
 
       &:nth-child(1),
       &:nth-child(2) {
-        top: 0px;
+        top: 0;
       }
 
       &:nth-child(3),
@@ -110,7 +120,6 @@
     }
 
     &.active span {
-
       &:nth-child(1),
       &:nth-child(6) {
         transform: rotate(45deg);
@@ -122,35 +131,36 @@
       }
 
       &:nth-child(1) {
-        left: 2.5px;
         top: 3.5px;
+        left: 2.5px;
       }
 
       &:nth-child(2) {
-        left: calc(50% - 2.5px);
         top: 3.5px;
+        left: calc(50% - 2.5px);
       }
 
       &:nth-child(3) {
         left: -50%;
+
         opacity: 0;
       }
 
       &:nth-child(4) {
         left: 100%;
+
         opacity: 0;
       }
 
       &:nth-child(5) {
-        left: 2.5px;
         top: 14.5px;
+        left: 2.5px;
       }
 
       &:nth-child(6) {
-        left: calc(50% - 2.5px);
         top: 14.5px;
+        left: calc(50% - 2.5px);
       }
     }
-
   }
 }

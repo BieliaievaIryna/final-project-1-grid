@@ -3,6 +3,7 @@
 
 .subscribe {
   padding: $gap-lg 0;
+
   background-color: $color-primary;
 
   &__container {
@@ -11,18 +12,16 @@
 
   &__form {
     display: grid;
-    gap: $gap;
 
+    gap: $gap;
     @include md-min {
       grid-template-columns: repeat(3, 1fr);
     }
-
     @include md-sm {
       grid-template-columns: repeat(2, 1fr);
     }
 
     &-group {
-
       @include md-sm {
         &:nth-of-type(3) {
           grid-column: 1 / 2;
@@ -42,8 +41,9 @@
     }
   }
 
-  &__input {    
+  &__input {
     padding: 0.5em 1.875em;
+
     color: $color-white;
 
     @include form-element;
@@ -59,6 +59,7 @@
 
       &::placeholder {
         color: $color-white;
+
         font-weight: 400;
       }
     }
@@ -72,16 +73,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     cursor: pointer;
+
     color: rgba($color-white, 0.5);
 
-    @include form-element; 
+    @include form-element;
 
     &:hover,
     &:focus {
-      background-color: $color-accent;
-      border-color: $color-white;
       color: $color-white;
+      border-color: $color-white;
+      background-color: $color-accent;
     }
   }
 }
